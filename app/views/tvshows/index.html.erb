@@ -1,1 +1,7 @@
-<h1>This is my webapp</h1>
+<% @tvshow.each do |tvshow| %>
+  <h1><%= tvshow.name %></h1>
+  <h2><%= tvshow.description %></h2>
+  <p><%= tvshow.star_rating %></p>
+
+  <hr />
+<% end %>
