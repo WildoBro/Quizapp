@@ -1,7 +1,15 @@
 <% @tvshow.each do |tvshow| %>
-  <h1><%= tvshow.name %></h1>
-  <p><%= tvshow.description %></p>
-  <i>Star Rating: <%= tvshow.star_rating %></i>
+  <h1>
+    <%= tvshow.name %>
+  </h1>
+
+  <p>
+    <%= tvshow.description %>
+  </p>
+
+  <i>
+    Star Rating: <%= tvshow.star_rating %>
+  </i>
 
   <hr />
 <% end %>
