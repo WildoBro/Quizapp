@@ -1,6 +1,12 @@
 class TvshowsController < ApplicationController
   def index
     @tvshow = Tvshow.all
-    @user_review = UserReview.new
+
+  end
+
+  def show
+    @tvshow = Tvshow.find(params[:id])
+    @new_user_review = UserReview.new
+    @user_review = UserReview.find(params[:id])
   end
 end

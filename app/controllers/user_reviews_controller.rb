@@ -1,6 +1,6 @@
 class UserReviewsController < ApplicationController
   def create
-    @tvshow = Tvshow.find(:tvshow_id)
+    @tvshow = Tvshow.find(params[:tvshow_id])
     @tvshow.user_reviews.create(user_review_params)
     redirect_to root_path
   end
