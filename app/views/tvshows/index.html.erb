@@ -11,5 +11,11 @@
     Star Rating: <%= tvshow.star_rating %>
   </i>
 
+  <%= simple_form_for @user_review, url: tvshow_user_reviews_path(@tvshow) do |f| %>
+    <%= f.input :review %>
+    <%= f.input :rating %>
+    <%= f.input :name %>
+    <%= f.submit "Submit", class: 'btn btn-primary' %>
+  <% end %>
   <hr />
 <% end %>
