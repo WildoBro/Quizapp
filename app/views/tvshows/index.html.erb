@@ -1,20 +1,14 @@
 <% @tvshow.each do |tvshow| %>
-  <h1>
-    <%= tvshow.name %>
-  </h1>
-
-  <p>
-    <%= tvshow.description %>
-  </p>
-
-  <i>
-    Star Rating: <%= tvshow.star_rating %>
-  </i>
+  <h1><%= tvshow.name %></h1>
+  <p><%= tvshow.description %></p>
+  <i>Star Rating: <%= tvshow.star_rating %></i>
 
   <br />
 
   <i>
-  <%= link_to "User Reviews", tvshow_path(tvshow) %>
+    <%= link_to "User Reviews", tvshow_path(tvshow) %>
+  <br />
+    <%= link_to "Submit Your Own Review", new_tvshow_user_review_path(tvshow) %>
   </i>
 
   <hr />

@@ -1,19 +1,16 @@
-<h1> <%= @tvshow.name %> </h1>
-
-<% @tvshow.user_reviews.each do |reviews| %>
-  <h2> <%= reviews.review %> </h2>
-  <h2> <%= reviews.rating %> </h2>
-  <h2> <%= reviews.name %> </h2>
-
+<% if @tvshow.user_reviews.empty? %>
+  <h2> No User Reviews Have Been Submitted Yet.</h2>
   <hr />
+<% else %>
+  <h1><%= @tvshow.name %></h1>
 
+  <% @tvshow.user_reviews.each do |reviews| %>
+    <h2> <%= reviews.review %> </h2>
+    <h2> <%= reviews.rating %> </h2>
+    <h2> <%= reviews.name %> </h2>
+    
+    <hr />
+  <% end %>
 <% end %>
 
-<h1>Submit your own review!</h1>
-
-<%= simple_form_for @new_user_review, url: tvshow_user_reviews_path(@tvshow) do |f| %>
-  <%= f.input :review %>
-  <%= f.input :rating %>
-  <%= f.input :name %>
-  <%= f.submit "Add a Review", class: 'btn btn-primary' %>
-<% end %>
+<h2><%= link_to "Submit Your Own Review", new_tvshow_user_review_path(@tvshow.id) %></h2> 

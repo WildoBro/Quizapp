@@ -6,7 +6,7 @@ Rails.application.routes.draw do
   # root 'welcome#index'
   root 'tvshows#index'  
   resources :tvshows do 
-    resources :user_reviews, only: :create
+    resources :user_reviews, only: [:create, :new]
   end
 
   # Example of regular route:
